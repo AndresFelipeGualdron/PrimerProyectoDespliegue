@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding ="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+	
+	<h:body>
+	<p:dataTable var="lista" value="#{guessBean.getListaIntentos()}">
+	    <p:column headerText="Intento">
+	        <h:outputText value="#{lista.getNumeroIntento()}" />
+	    </p:column>
+	    <p:column headerText="Premio">
+	        <h:outputText value="#{lista.getPremio()}" />
+	    </p:column>
+	    <p:column headerText="Estado">
+	        <h:outputText value="#{lista.getEstado()}" />
+	    </p:column>
+	    <p:column headerText="Número Intento">
+	        <h:outputText value="#{lista.getNumeroUsuario()}" />
+	    </p:column>
+	</p:dataTable>
+	 <h:form id="guess_form">
+		<p:outputLabel value="el número correcto es: #{guessBean.getNumeroAdivinar()}" style = "display:none;">
+		 </p:outputLabel>
+		 <br/>
+
+		 <p:inputText binding="#{numeroUsuarioInput}" name="numeroUsuario">
+		 Ingrese su número:
+		 </p:inputText>
+		 <br/>
+
+		 
+
+		 <p:commandButton update="guess_form" actionListener="#{guessBean.guesss(numeroUsuarioInput.value)}" value="Enviar">
+		 </p:commandButton>
+		 <p:commandButton value="Reiniciar" update="guess_form" actionListener="#{guessBean.restart}">
+		 </p:commandButton>
+	 </h:form>
+
+	</h:body>
+	
+	
+	
+</html>
