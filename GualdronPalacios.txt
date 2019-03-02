@@ -1,0 +1,7 @@
+Integrantes:
+Andres Gualdron
+Natalia Palacios
+
+URLS:
+Parte 1: https://github.com/AndresFelipeGualdron/PrimerRepositorioCVDS
+Parte 2: https://github.com/AndresFelipeGualdron/PrimerProyectoDespliegue
